@@ -1,0 +1,50 @@
+{
+  "_schemaVersion": "1.0.0",
+  "formatTemperature": {
+    "inputs": [
+      {
+        "name": "values",
+        "kind": "required",
+        "type": ["numeric", "real", "vector"],
+        "purpose": "Temperatures to format"
+      },
+      {
+        "name": "unit",
+        "kind": "required",
+        "type": ["choices={'Celsius','Fahrenheit','Kelvin'}"],
+        "purpose": "Temperature unit"
+      },
+      {
+        "name": "digits",
+        "kind": "ordered",
+        "type": ["numeric", "integer", "scalar", ">=0", "<=15"],
+        "purpose": "Digits after the decimal point (default: 1)"
+      },
+      {
+        "name": "Style",
+        "kind": "namevalue",
+        "type": ["choices={'fixed','scientific'}"],
+        "purpose": "Numeric display style"
+      },
+      {
+        "name": "ShowUnit",
+        "kind": "namevalue",
+        "type": ["logical", "scalar"],
+        "purpose": "Append the unit text"
+      },
+      {
+        "name": "Prefix",
+        "kind": "namevalue",
+        "type": [["char"], ["string", "scalar"]],
+        "purpose": "Text prepended to every result"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "formattedText",
+        "type": ["string"],
+        "purpose": "Formatted temperatures"
+      }
+    ]
+  }
+}
